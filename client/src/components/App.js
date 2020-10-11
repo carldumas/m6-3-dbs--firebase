@@ -5,12 +5,24 @@ import Avatar from './Avatar';
 import { AppContext } from './AppContext';
 
 const App = () => {
-  const {} = useContext(AppContext);
+  const { appUser, signInWithGoogle, handleSignOut, message } = useContext(
+    AppContext
+  );
 
   return (
     <StyledPageWrapper>
       <StyledHeader>
-        <button>Sign In</button>
+        {appUser && appUser.email ? (
+          <StyledUserContainer>
+            <Avatar src={appUser.photoURL} />
+            <p>
+              {appUser.displayName} ({appUser.email})
+            </p>
+            <button onClick={handleSignOut}>Sign out</button>
+          </StyledUserContainer>
+        ) : (
+          <button onClick={signInWithGoogle}>Sign In</button>
+        )}
       </StyledHeader>
       <StyledContainer>{message}</StyledContainer>
     </StyledPageWrapper>

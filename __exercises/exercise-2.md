@@ -3,14 +3,14 @@
 1. Add the firebase dependencies to the `AppProvider` file. _They've already installed via the package.json file._
 
 ```js
-import withFirebaseAuth from "react-with-firebase-auth";
-import * as firebase from "firebase";
-import "firebase/auth";
+import withFirebaseAuth from 'react-with-firebase-auth';
+import * as firebase from 'firebase';
+import 'firebase/auth';
 ```
 
 2. Initialize the Firebase app below your `firebaseConfig` declaration, as well as the `firebaseAppAuth` item.
 
-_This is where you will makee use of the `firebaseConfig` from the last exercise._
+_This is where you will make use of the `firebaseConfig` from the last exercise._
 
 ```js
 const firebaseApp = firebase.initializeApp(firebaseConfig);
@@ -71,7 +71,7 @@ Firebase provides us with some methods that we can call to trigger `Signin` and 
 
 Users can now sign in with Google!
 
-Google provides us with information on a user once they sign in. In order, ot access it we need to receive it as props. Let's do that and then console.log it. We'll do this inside of a `useEffect` because chances are that we'll have to wait for that data to be available.
+Google provides us with information on a user once they sign in. In order to access it we need to receive it as props. Let's do that and then console.log it. We'll do this inside of a `useEffect` because chances are that we'll have to wait for that data to be available.
 
 6. Add `user` and console the contents.
 
@@ -128,7 +128,7 @@ Take a look at what we have on the `user`. We've got tons of data! Let's pick ou
   ...
 ```
 
-9. Let's use that data to render the info on the current user in the header.
+9. Let's use that data to render the info of the current user in the header.
 10. We should also only show the sign in button if the user is _not_ signed in. (we will know whether or not they are signed in, by whether or not we have data in the appUser object.)
 
 ```diff
